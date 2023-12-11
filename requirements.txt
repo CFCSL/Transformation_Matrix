@@ -8,5 +8,5 @@ pip
 pillow
 streamlit-aggrid
 pypdf2
-openpyxl
 seaborn
+openpyxl
