@@ -33,4 +33,4 @@ def RotationMatrix(theta) :
 # df3.to_excel(r"C:\Users\cfcpc2\Documents\GitHub\GitHub_CFC\Rotation_Matrix\Pylon_Deformations-GLOBAL-XX.xlsx")
 # =============================================================================
 
-j=np.dot([1,1,1],RMatrix)
+
