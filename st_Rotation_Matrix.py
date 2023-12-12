@@ -19,8 +19,8 @@ theta_1=st.number_input("$\\theta_1[degrees]=$", value=0.0, max_value= 90.0)
 theta_2=st.number_input("$\\theta_2[degrees]=$", value=0.0, max_value= 90.0)
 theta_3=st.number_input("$\\theta_3[degrees]=$", value=30.0, max_value= 90.0)
 
-
-RMatrix=RotationMatrix([np.radians(theta_1),np.radians(theta_2),np.radians(theta_3)])
+theta=[np.radians(theta_1),np.radians(theta_2),np.radians(theta_3)]
+RMatrix=RotationMatrix(theta)
 st.write(f'Rotation matrix:',RMatrix)
 
 st.markdown('---')
