@@ -10,9 +10,10 @@ from Local_Rotation import *
 from logo_header import *
 from helper_functions import *
 import os
+import openpyxl as op
 
-import pip
-pip.main(["install", "openpyxl"])
+#import pip
+#pip.main(["install", "openpyxl"])
 
 
 logo()
