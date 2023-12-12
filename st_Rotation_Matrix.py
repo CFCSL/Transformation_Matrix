@@ -10,20 +10,24 @@ from Local_Rotation import *
 from logo_header import *
 from helper_functions import *
 import os
-import openpyxl as op
-
-#import pip
-#pip.main(["install", "openpyxl"])
-
 
 logo()
 header()
 st.markdown('---')
 st.header("**Rotation matrix**")
 
-theta_1=st.number_input("$\\theta_1[degrees]=$", value=0.0, max_value= 90.0)
-theta_2=st.number_input("$\\theta_2[degrees]=$", value=0.0, max_value= 90.0)
-theta_3=st.number_input("$\\theta_3[degrees]=$", value=30.0, max_value= 90.0)
+# Create three columns
+col1, col2, col3 = st.columns(3)
+with col1:
+    theta_1 = st.number_input('$\\theta_1[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+
+with col2:
+    theta_2 = st.number_input('$\\theta_2[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+
+with col3:
+    theta_3 = st.number_input('$\\theta_3[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+
+
 
 theta=[np.radians(theta_1),np.radians(theta_2),np.radians(theta_3)]
 RMatrix=RotationMatrix(theta)
@@ -44,10 +48,16 @@ bt_Sample=st.button('SAMPLE', key='SAMPLE')
 if bt_Sample:
 	df = pd.read_excel(r'Inputs/Pylon-Deformations-Original.xlsx', engine='openpyxl')
 
-	columns=df.columns
-	X=st.selectbox('Chose the initial $x$-coordinate', options= "X")
-	Y=st.selectbox('Chose the initial $y$-coordinate', options= "Y")
-	Z=st.selectbox('Chose the initial $z$-coordinate', options= "Z")
+	columns = df.columns.tolist()
+	
+	
+	# Define default values - you can adjust these as needed
+	default_x = 'x' if 'x' in columns else 0
+	default_y = 'y' if 'y' in columns else 0
+	default_z = 'z' if 'z' in columns else 0
+	X=st.selectbox('Chose the initial $x$-coordinate', options= columns, index=default_x)
+	Y=st.selectbox('Chose the initial $y$-coordinate', options= columns, index=default_y)
+	Z=st.selectbox('Chose the initial $z$-coordinate', options= columns, index=default_z)
 	df1=df[[X,Y,Z]].to_numpy()
 
 	j=np.dot(df1,RMatrix)
