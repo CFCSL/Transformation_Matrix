@@ -9,7 +9,7 @@ import streamlit as st
 from Local_Rotation import *
 from logo_header import *
 from helper_functions import *
-from openpyxl import Workbook
+
 
 logo()
 header()
@@ -37,7 +37,7 @@ bt_Sample=st.button('SAMPLE', key='SAMPLE')
 
 
 if bt_Sample:
-	df = pd.read_excel(r'Inputs/Pylon-Deformations-Original.xlsx', engine='openpyxl')
+	df = pd.read_excel(r'Inputs/Pylon-Deformations-Original.xlsx', engine='xlsxwriter')
 
 	columns=df.columns
 	X=st.selectbox('Chose the initial $x$-coordinate', options= "X")
