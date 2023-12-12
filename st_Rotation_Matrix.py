@@ -10,6 +10,11 @@ from Local_Rotation import *
 from logo_header import *
 from helper_functions import *
 import os
+
+import pip
+pip.main(["install", "openpyxl"])
+
+
 logo()
 header()
 st.markdown('---')
