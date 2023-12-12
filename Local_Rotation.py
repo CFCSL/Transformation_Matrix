@@ -17,7 +17,7 @@ def RotationMatrix(theta) :
 	R = np.dot(R_z, np.dot( R_y, R_x ))
 	return R
 
-RMatrix=RotationMatrix([0,0,np.radians(30)])
+#RMatrix=RotationMatrix([0,0,np.radians(30)])
 
 
 # =============================================================================
