@@ -37,7 +37,7 @@ bt_Sample=st.button('SAMPLE', key='SAMPLE')
 
 
 if bt_Sample:
-	df=pd.read_excel(r'/Pylon-Deformations-Original.xlsx')
+	df=pd.read_excel(r'/Pylon-Deformations-Original.xlsx',sheet_name=0, header=0, index_col=None)
 	st.write(df)
 	columns=df.columns
 	X=st.selectbox('Chose the initial $x$-coordinate', options= "X")
