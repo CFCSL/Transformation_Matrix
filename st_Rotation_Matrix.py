@@ -12,7 +12,6 @@ from helper_functions import *
 import tempfile
 import io
 import os
-import openpyxl
 logo()
 header()
 
