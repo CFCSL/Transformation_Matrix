@@ -1,8 +1,8 @@
 pandas
 streamlit
 matplotlib
-
-
+xlsxwriter
+openpyxl
 
 
 
