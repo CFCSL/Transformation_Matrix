@@ -36,7 +36,7 @@ bt_Sample=st.button('SAMPLE', key='SAMPLE')
 
 
 if bt_Sample:
-	df = pd.read_excel(r'Inputs/Pylon-Deformations-Original.xlsx', engine='xlsxwriter')
+	df = pd.read_excel(r'Inputs/Pylon-Deformations-Original.xlsx', engine='openpyxl')
 
 	columns=df.columns
 	X=st.selectbox('Chose the initial $x$-coordinate', options= "X")
@@ -62,7 +62,7 @@ if bt_Sample:
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
 	st.write('Data preview')
-	_dict=pd.read_excel(uploaded_file,sheet_name=None, engine='xlsxwriter')
+	_dict=pd.read_excel(uploaded_file,sheet_name=None, engine='openpyxl')
 	for k in _dict:
 		df=_dict[k]
 		edited_df=st.data_editor(df,num_rows="dynamic")
