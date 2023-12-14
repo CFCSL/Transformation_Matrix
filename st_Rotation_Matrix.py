@@ -9,12 +9,17 @@ import streamlit as st
 from Local_Rotation import *
 from logo_header import *
 from helper_functions import *
-import os
+from PIL import Image
 
 logo()
 header()
 st.markdown('---')
 st.header("**Rotation matrix**")
+
+# Load an image from file
+image = Image.open("Drawings/ESQUEMA_PROYECCION.PNG")
+# Display the image
+st.image(image,  use_column_width=True)
 
 # Create three columns
 col1, col2, col3 = st.columns(3)

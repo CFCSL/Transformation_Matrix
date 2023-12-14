@@ -6,6 +6,7 @@ Created on Mon Dec  4 18:05:59 2023
 """
 import numpy as np
 import pandas as pd
+import os
 
 
 def RotationMatrix(theta) :
@@ -22,11 +23,42 @@ def RotationMatrix(theta) :
 
 
 def j(nparray,RMatrix):
-	np.dot(,RMatrix)
+	newArray=np.dot(nparray,RMatrix)
 	return newArray
 # Write a function to read an external excel and return the final result?
 
-def generate(input_excel, output_file_name):
+def generate(input_file_excel,theta): # theta in degrees
+	# convert theta from degrees to radial
+	theta=np.radians(theta)
+	RMatrix=RotationMatrix(theta)
+	# convert the input excel file into data array
+	df=pd.read_excel(input_file_excel)
+	if {"X", "Y", "Z"}.issubset(df.columns):
+		df1=df[["Z", "Y","Z"]].to_numpy() 
+		newArray=j(df1,RMatrix)
+		df2=pd.DataFrame(newArray,columns=['x','y','z'])
+
+		df3=pd.concat([df, df2], axis=1)
+		df3=df3.drop(columns=["X","Y","Z"], axis=1)
+		
+		df3.to_excel('output.xlsx')
+		
+		return df3
+		
+	else:
+		raise ValueError("Choose the three columns of x, y, z.")
+		return None
+		
+
+
+input_file_excelr"Inputs/Pylon-Deformations-Original.xlsx"
+
+#df=pd.read_excel(input_file_excel)
+
+#theta=[0,0,30]
+
+#generate(input_file_excel,theta)
+	
 	
 
 
