@@ -22,7 +22,7 @@ def RotationMatrix(theta) :
 # vector times vector
 
 
-def j(nparray,RMatrix):
+def dot_product(nparray,RMatrix):
 	newArray=np.dot(nparray,RMatrix)
 	return newArray
 # Write a function to read an external excel and return the final result?
@@ -35,7 +35,7 @@ def generate(input_file_excel,theta): # theta in degrees
 	df=pd.read_excel(input_file_excel)
 	if {"X", "Y", "Z"}.issubset(df.columns):
 		df1=df[["Z", "Y","Z"]].to_numpy() 
-		newArray=j(df1,RMatrix)
+		newArray=dot_product(df1,RMatrix)
 		df2=pd.DataFrame(newArray,columns=['x','y','z'])
 
 		df3=pd.concat([df, df2], axis=1)
@@ -51,11 +51,11 @@ def generate(input_file_excel,theta): # theta in degrees
 		
 
 
-input_file_excel=r"Inputs/Pylon-Deformations-Original.xlsx"
+#input_file_excel=r"Inputs/Pylon-Deformations-Original.xlsx"
 
-theta=[0,0,30]
+#theta=[0,0,30]
 
-generate(input_file_excel,theta)
+#generate(input_file_excel,theta)
 	
 	
 
