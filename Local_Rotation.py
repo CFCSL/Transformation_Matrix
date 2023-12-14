@@ -51,13 +51,11 @@ def generate(input_file_excel,theta): # theta in degrees
 		
 
 
-input_file_excelr"Inputs/Pylon-Deformations-Original.xlsx"
+input_file_excel=r"Inputs/Pylon-Deformations-Original.xlsx"
 
-#df=pd.read_excel(input_file_excel)
+theta=[0,0,30]
 
-#theta=[0,0,30]
-
-#generate(input_file_excel,theta)
+generate(input_file_excel,theta)
 	
 	
 
