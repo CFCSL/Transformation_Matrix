@@ -17,10 +17,25 @@ def RotationMatrix(theta) :
 	R = np.dot(R_z, np.dot( R_y, R_x ))
 	return R
 
-#RMatrix=RotationMatrix([0,0,np.radians(30)])
+# function to calculate the dot products 
+# vector times vector
+
+
+def j(nparray,RMatrix):
+	np.dot(,RMatrix)
+	return newArray
+# Write a function to read an external excel and return the final result?
+
+def generate(input_excel, output_file_name):
+	
+
 
 
 # =============================================================================
+# 
+# RMatrix=RotationMatrix([0,0,np.radians(30)])
+# 
+# 
 # 
 # df=pd.read_excel(r"C:\Users\cfcpc2\Documents\GitHub\GitHub_CFC\Rotation_Matrix\Pylon-Deformations-Original.xlsx")
 # df1=df[['u-X','u-Y','u-Z']]
@@ -31,6 +46,6 @@ def RotationMatrix(theta) :
 # df3=pd.concat([df, df2], axis=1)
 # 
 # df3.to_excel(r"C:\Users\cfcpc2\Documents\GitHub\GitHub_CFC\Rotation_Matrix\Pylon_Deformations-GLOBAL-XX.xlsx")
+# 
+# 
 # =============================================================================
-
-
