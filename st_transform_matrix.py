@@ -6,7 +6,7 @@ Created on Mon Dec 11 15:42:30 2023
 """
 
 import streamlit as st
-from transformation_matrix import *
+from transform_matrix import *
 from logo_header import *
 from helper_functions import *
 from PIL import Image
@@ -35,7 +35,7 @@ with col3:
 
 
 theta=[np.radians(theta_1),np.radians(theta_2),np.radians(theta_3)]
-RMatrix=RotationMatrix(theta)
+RMatrix=rotation_matrix(theta)
 st.write(f'Rotation matrix:',RMatrix)
 
 st.markdown('---')
