@@ -24,13 +24,13 @@ st.image(image,  use_column_width=True)
 # Create three columns
 col1, col2, col3 = st.columns(3)
 with col1:
-    theta_1 = st.number_input('$\\theta_1[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+    theta_1 = st.number_input('$\\theta_x[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
 
 with col2:
-    theta_2 = st.number_input('$\\theta_2[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+    theta_2 = st.number_input('$\\theta_y[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
 
 with col3:
-    theta_3 = st.number_input('$\\theta_3[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
+    theta_3 = st.number_input('$\\theta_z[degrees]=$', min_value=0.0, max_value=360.0, value=0.0)
 
 
 
