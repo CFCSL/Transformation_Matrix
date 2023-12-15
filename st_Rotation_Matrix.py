@@ -19,7 +19,7 @@ st.header("**Rotation matrix**")
 # Load an image from file
 image = Image.open(r"Drawings/ESQUEMA_PROYECCION.png")
 # Display the image
-st.image(image,  use_column_width=True,width=200)
+st.image(image,  width=200)
 
 # Create three columns
 col1, col2, col3 = st.columns(3)
