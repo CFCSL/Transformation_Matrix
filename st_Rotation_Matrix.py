@@ -17,7 +17,7 @@ st.markdown('---')
 st.header("**Rotation matrix**")
 
 # Load an image from file
-image = Image.open("Drawings/ESQUEMA_PROYECCION.PNG")
+image = Image.open(r"Drawings/ESQUEMA_PROYECCION.png")
 # Display the image
 st.image(image,  use_column_width=True)
 
