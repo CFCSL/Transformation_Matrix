@@ -87,8 +87,18 @@ with open(notebook_file_path, "rb") as file:
     btn = st.download_button(
             label="Download Jupyter Notebook",
             data=file,
-            file_name="Notebook_transformation_matrix.ipynb",
+            file_name=notebook_file_path ,
             mime="application/x-ipynb+json")
+
+
+file_path = 'transformation_matrix.py'
+# Read the package file as binary
+with open(file_path, "rb") as file:
+    btn = st.download_button(
+            label="Download the Package",
+            data=file,
+            file_name=file_path ,
+            mime="application/x-py+json")
 
 #st.markdown("[Aerodynamic effect Python package](https://github.com/CFCSL/Transformation_Matrix)")
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
