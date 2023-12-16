@@ -50,4 +50,4 @@ Where (θ) is the angle of rotation.
 
 - The program developed by: Pedram Manouchehri
 - User interface developed by: Nam Nguyen 
-- Independently checked by: [Name if applicable]
+- Independently checked by: -
