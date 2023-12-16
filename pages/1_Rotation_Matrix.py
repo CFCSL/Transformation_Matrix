@@ -84,5 +84,5 @@ if df is not None and all(col in df.columns for col in [x, y, z]):
 	st.write(results)
 	st.markdown(download_link(results, 'Rotation_Applied'), unsafe_allow_html=True)
 else:
-	st.error('Some of the indicated columns not found in the table. please revise the Column name!', icon="🚨")
+	st.error('Some of the indicated columns not found in the table. please revise the Column names!', icon="🚨")
 
