@@ -4,76 +4,68 @@ from logo_header import *
 from helper_functions import *
 
 # Streamlit page configuration
-st.set_page_config(page_title="Transformation Matrices", page_icon=":book:")
+st.set_page_config(page_title="Transformation Matrices", page_icon="🔄")
 
 logo()
 header()
 
+# Page Title
+st.title("Transformation Matrix Package")
 
-
-# Title of the page
-st.title("Understanding Transformation Matrices")
+# Introduction to the Package
+st.write("""
+Our Transformation Matrix Package offers an intuitive and powerful solution for handling transformation matrices, with a special focus on 3D rotation matrices.
+Primarily designed for engineers, designers, and those involved in three-dimensional object transformations, this Python package currently facilitates the
+manipulation of Rotation Matrices to enable precise rotations within 3D space—a fundamental aspect of transformation matrices. As we continue to develop the tool,
+we plan to expand its features to encompass a broader range of transformation matrix capabilities. A significant application of this tool lies in the engineering sector,
+especially in accurately aligning Finite Element (FE) Models with global positions as illustrated in engineering drawings. This function proves to be particularly beneficial,
+allowing engineers to adopt a more convenient coordinate system for model development before rotating it to the required orientation. This not only simplifies
+the modeling process but also enhances the precision and reduces the complexity of design tasks.""")
 
 # Introduction to Transformation Matrices
-st.header("What is a Transformation Matrix?")
+st.header("Introduction to Transformation Matrices")
 st.write("""
-A Transformation Matrix is a special kind of matrix that describes how to apply a specific transformation to a space or set of points. 
-It is widely used in various fields like computer graphics, robotics, and physics. Common transformations include scaling, 
-translation, and rotation.
+Transformation Matrices are powerful mathematical tools used in various fields such as computer graphics, physics, 
+and engineering. They are matrices that represent different types of transformations in space, such as scaling, 
+rotation, and translation. These matrices enable us to perform complex transformations in a straightforward and efficient manner.
 """)
 
-# Section on Rotation Matrices
-st.header("Rotation Matrices")
+# Rotation Matrices in 3D Space
+st.subheader("Rotation Matrices in 3D Space")
+
 st.write("""
-A Rotation Matrix is a type of Transformation Matrix used to rotate a vector in a coordinate space. 
-The rotation can be in two-dimensional or three-dimensional space. The matrix is constructed from the rotation angle 
-and the axis of rotation (for 3D rotations).
-
-In 2D space, a rotation matrix that rotates a point through an angle \\( \\theta \\) can be represented as:
-
-\\[
-\\begin{bmatrix}
-\\cos(\\theta) & -\\sin(\\theta) \\\\
-\\sin(\\theta) & \\cos(\\theta)
-\\end{bmatrix}
-\\]
-
-In 3D space, we often use separate rotation matrices for rotations about the x, y, and z axes.
+Among the various types of transformation matrices, Rotation Matrices are particularly important. They are used to rotate 
+objects in two-dimensional or three-dimensional space.
+In three-dimensional space, a Rotation Matrix can rotate an object about the x, y, or z-axis. The formulation of a 3D 
+rotation matrix depends on the axis and angle of rotation. The general form of these matrices is:
 """)
-
-# Interactive Rotation Matrix Calculator
-st.header("Interactive Rotation Matrix Calculator")
-
-# User input for the angle
-angle = st.slider("Select the rotation angle (in degrees):", -180, 180, 0)
-
-# Function to calculate the 2D rotation matrix
-def calculate_rotation_matrix(angle_degrees):
-    theta = np.radians(angle_degrees)  # Converting degrees to radians
-    rotation_matrix = np.array([
-        [np.cos(theta), -np.sin(theta)],
-        [np.sin(theta), np.cos(theta)]
-    ])
-    return rotation_matrix
-
-# Calculating the rotation matrix for the given angle
-rotation_matrix_2d = calculate_rotation_matrix(angle)
-
-# Display the rotation matrix
-st.write("The 2D rotation matrix for your selected angle is:")
-st.latex(f"""
-\\begin{{bmatrix}}
-{rotation_matrix_2d[0,0]:.2f} & {rotation_matrix_2d[0,1]:.2f} \\\\
-{rotation_matrix_2d[1,0]:.2f} & {rotation_matrix_2d[1,1]:.2f}
-\\end{{bmatrix}}
+st.latex(r"""
+R_x(\theta) = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}
 """)
+st.latex(r"""
+R_y(\theta) = 
+\begin{bmatrix}
+\cos(\theta) & 0 & \sin(\theta) \\
+0 & 1 & 0 \\
+-\sin(\theta) & 0 & \cos(\theta)
+\end{bmatrix}
+""")
+st.latex(r"""
+R_z(\theta) = 
+\begin{bmatrix}
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+""")
+st.markdown(r"Where ($\theta$) is the angle of rotation.")
 
 
-# Further Reading and References
-st.subheader("Learn More")
-
-
-st.markdown("""Ref""")
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 st.markdown("""---
