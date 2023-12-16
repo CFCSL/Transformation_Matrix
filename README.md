@@ -21,3 +21,33 @@ objects in two-dimensional or three-dimensional space.
 In three-dimensional space, a Rotation Matrix can rotate an object about the x, y, or z-axis. The formulation of a 3D 
 rotation matrix depends on the axis and angle of rotation. The general form of these matrices is:
 
+R_x(\theta) = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}
+
+R_y(\theta) = 
+\begin{bmatrix}
+\cos(\theta) & 0 & \sin(\theta) \\
+0 & 1 & 0 \\
+-\sin(\theta) & 0 & \cos(\theta)
+\end{bmatrix}
+
+R_z(\theta) = 
+\begin{bmatrix}
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+
+
+Where (θ) is the angle of rotation.
+
+
+---
+
+- The program developed by: Pedram Manouchehri
+- User interface developed by: Nam Nguyen 
+- Independently checked by: [Name if applicable]
